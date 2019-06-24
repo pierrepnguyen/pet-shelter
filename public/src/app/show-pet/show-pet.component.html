@@ -1,0 +1,43 @@
+<div id="main-content">
+  <div id="top">
+    <button [routerLink]="['/pets']" class="waves-effect waves-light btn">Home</button>
+    <h3>Details about {{ pet.name }}</h3>
+  </div>
+  <div id="info">
+    <table>
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Pet Type: </th>
+          <td>{{ pet.type }}</td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>{{ pet.description }}</td>
+        </tr>
+        <tr>
+          <th>Skills: </th>
+          <td *ngIf="pet.skill_one">{{ pet.skill_one }}</td>
+        </tr>
+        <tr *ngIf="pet.skill_two">
+            <td></td>
+            <td>{{ pet.skill_two }}</td>          
+        </tr>
+        <tr *ngIf="pet.skill_three">
+            <td></td>
+            <td>{{ pet.skill_three }}</td>          
+        </tr>
+        <tr>
+          <th>Likes: </th>
+          <td>{{ pet.likes }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <button (click)="onLike()" *ngIf="!isLiked" class="waves-effect waves-light btn">Like this pet</button>
+    <br>
+    <br>
+    <button (click)="onAdopt()" class="waves-effect waves-light btn">Adopt this pet</button>
+  </div>
+</div>
